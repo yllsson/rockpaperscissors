@@ -3,4 +3,26 @@ body {
     padding: 0;
 }
 
-/* add more styles here */
+.rock {
+    /* background-image: url("../pics/rock.png"); */
+    width: 10vw;
+    height: 15vw;
+}
+
+.rock img {
+    width: 100%;
+}
+
+.paper {
+    background-image: url("../pics/paper.png");
+    background-repeat: no-repeat;
+    width: 10vw;
+    height: 15vh;
+}
+
+.scissors {
+    background-image: url("../pics/scissors.png");
+    width: 10vw;
+    height: 15vw;
+}
+/* add more styles here */  
