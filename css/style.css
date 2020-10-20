@@ -1,6 +1,24 @@
+/* colour palette
+    "Rich Black" - #011627
+    "Baby Powder" - #FDFFFC
+    "Tiffany Blue" - #2EC4B6
+    "Rose Madder" - #E71D36
+    "Orange Peel" - #FF9F1C
+*/
+
 body {
     margin: 0;
     padding: 0;
+    font-family: "Calibri", sans-serif;
+    background-color: #FDFFFC;
+    color: #011627;
+}
+
+h1 {
+    width: 70vw;
+    margin: 10vh auto;
+    text-align: center;
+    font-size: 3em;
 }
 
 
@@ -21,12 +39,13 @@ body {
     }
 
     .rock {
-        background-image: url("../pics/rock.png");
+        background-image: url("../pics/rock1.png");
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
         width: 15vw;
         height: 15vw;
+        background-color: #2EC4B6;
     }
 
     .paper {
@@ -36,6 +55,7 @@ body {
         background-repeat: no-repeat;
         width: 15vw;
         height: 15vw;
+        background-color: #E71D36;
     }
 
     .scissors {
@@ -45,4 +65,5 @@ body {
         background-repeat: no-repeat;
         width: 15vw;
         height: 15vw;
+        background-color: #FF9F1C;
     }
