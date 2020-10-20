@@ -3,26 +3,46 @@ body {
     padding: 0;
 }
 
-.rock {
-    /* background-image: url("../pics/rock.png"); */
-    width: 10vw;
-    height: 15vw;
-}
 
-.rock img {
-    width: 100%;
-}
+/* Game buttons */
 
-.paper {
-    background-image: url("../pics/paper.png");
-    background-repeat: no-repeat;
-    width: 10vw;
-    height: 15vh;
-}
+    .buttonContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 70vw;
+        margin: 0 auto;
+    }
 
-.scissors {
-    background-image: url("../pics/scissors.png");
-    width: 10vw;
-    height: 15vw;
-}
-/* add more styles here */  
+    .button {
+        border: 1px solid black;
+        border-radius: 10%;
+    }
+
+    .rock {
+        background-image: url("../pics/rock.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 15vw;
+        height: 15vw;
+    }
+
+    .paper {
+        background-image: url("../pics/paper.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 15vw;
+        height: 15vw;
+    }
+
+    .scissors {
+        background-image: url("../pics/scissors.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 15vw;
+        height: 15vw;
+    }
