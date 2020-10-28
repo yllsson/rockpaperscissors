@@ -70,9 +70,11 @@ h1 {
 
 /* results section */
 
-    #results {
+    .resultsContainer {
         margin-top: 4vh;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
     }
+
