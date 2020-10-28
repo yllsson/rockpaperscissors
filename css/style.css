@@ -67,3 +67,12 @@ h1 {
         height: 15vw;
         background-color: #FF9F1C;
     }
+
+/* results section */
+
+    #results {
+        margin-top: 4vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
