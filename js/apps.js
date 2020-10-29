@@ -1,27 +1,3 @@
-// insert game here...
-
-/* this is how the game should flow:
-
-  user picks rock/paper/scissors 
-
-  using Math.random to generate random number b/w 0 and 1
-  
-  if or switch-statement --> 
-    if math.random is up to 0.33 - rock, 
-    if b/w 0.34-0.66 - paper, 
-    if 0.67 or higher - scissors
-
-  compare user result to computer result
-
-  alert or add div/text of some kind to say "you win" or "you lose"
-
-  add score keeping mechanism... maybe best of 3 or first to 5 wins?
-
-  add functionality to add their name to a leader board?
-*/
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
 
   // grabbing all the html elements and storing into variables
@@ -33,18 +9,36 @@ document.addEventListener('DOMContentLoaded', function() {
   var resultsSection = document.getElementById("results");
   
 
+// the game!
   function game(user) {
     picksSection.innerHTML = ""
     resultsSection.innerHTML = "";
 
     let comp = Math.floor(Math.random() * 3);
 
+    // a function to switch the user and comp numbers into the correct name
+    function pick(num) {
+      switch (num) {
+        case 0:
+          return 'Rock';
+        case 1:
+          return 'Paper';
+        case 2:
+          return 'Scissors';
+      }
+    }
 
+    let userAlt = pick(user);
+    let compAlt = pick(comp);
+
+
+    // this gives an initial statement of the user and comp choices
     picksSection.innerHTML += `
-      <h2>You picked ${userSelection} and the computer picked ${compSelection}.</h2>
+      <h2>You picked ${userAlt} and the computer picked ${compAlt}.</h2>
     `;    
 
-    if (user == comp) {
+    // this calculates and prints the game result!
+    if (user === comp) {
       resultsSection.innerHTML += `
       <h2>It's a tie!</h2>
       `; 
@@ -55,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
         winningChoice = 0
       }
         
-      if (user = winningChoice) {
+      if (user === winningChoice) {
         resultsSection.innerHTML += `
         <h2>You win!</h2>
         `;
@@ -78,6 +72,5 @@ document.addEventListener('DOMContentLoaded', function() {
   scissors.addEventListener("click", function () {
     game(2); 
   });
-
 
 });
