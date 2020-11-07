@@ -14,8 +14,15 @@ body {
     color: #011627;
 }
 
-h1 {
+.maincontainer {
     width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
     margin: 10vh auto;
     text-align: center;
     font-size: 3em;
@@ -27,7 +34,7 @@ h1 {
     .buttonContainer {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-items: center;
         width: 70vw;
         margin: 0 auto;
@@ -76,5 +83,8 @@ h1 {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 70vw;
+
+        background-color: lightgrey;
     }
 
