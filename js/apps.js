@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <h2>You picked ${userAlt} and the computer picked ${compAlt}.</h2>
     `;    
 
+
     // this calculates and prints the game result!
     if (user === comp) {
       resultsSection.innerHTML += `
