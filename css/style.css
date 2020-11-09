@@ -31,56 +31,60 @@ h1 {
 
 /* Game buttons */
 
-    .buttonContainer {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 70vw;
-        margin: 0 auto;
-    }
+  .buttonContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 70vw;
+      margin: 0 auto;
+  }
 
-    .button {
-        border: 1px solid black;
-        border-radius: 10%;
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        width: 15vw;
-        height: 15vw;
-        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
-    }
+  .button {
+      border: 1px solid black;
+      border-radius: 10%;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 15vw;
+      height: 15vw;
+      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  }
 
-    .button:hover {
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    }
+  .button:hover {
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
 
-    .rock {
-        background-image: url("../pics/rock1.png");
-        background-color: #2EC4B6;
-    }
+  .rock {
+      background-image: url("../pics/rock1.png");
+      background-color: #2EC4B6;
+  }
 
-    .paper {
-        background-image: url("../pics/paper.png");
-        background-color: #E71D36;
-    }
+  .paper {
+      background-image: url("../pics/paper.png");
+      background-color: #E71D36;
+  }
 
-    .scissors {
-        background-image: url("../pics/scissors.png");
-        background-color: #FF9F1C;
-    }
+  .scissors {
+      background-image: url("../pics/scissors.png");
+      background-color: #FF9F1C;
+  }
+
+/* game type and score section */
+
+
 
 /* results section */
 
-    .resultsContainer {
-        margin-top: 8vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 58%;
+  .resultsContainer {
+      margin-top: 8vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 58%;
 
-        background-color: lightgrey;
-        /* border: solid 1px black; */
-    }
+      background-color: lightgrey;
+      /* border: solid 1px black; */
+  }
 

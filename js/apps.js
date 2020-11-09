@@ -1,15 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  // grabbing all the html elements and storing into variables
+// picking a game type
+  var gameType = document.getElementById('gameType');
+  // var gameTypeContainer = document.getElementById('gameTypeContainer');
+  var scoreContainer = document.getElementById('scoreContainer');
+
+  gameType.addEventListener('change', event => {
+    var dropDownValue = event.target.value;
+
+    scoreContainer.innerHTML = ''; 
+
+    scoreContainer.innerHTML += `
+        <h2>Your score 0/${dropDownValue}</h2>
+        <h2>Computer score 0/${dropDownValue}</h2>
+        `; 
+  });
+
+
+// the game!
   var rock = document.getElementById('rock');
   var paper = document.getElementById('paper');
   var scissors = document.getElementById('scissors');
 
   var picksSection = document.getElementById("picks");
   var resultsSection = document.getElementById("results");
-  
 
-// the game!
   function game(user) {
     picksSection.innerHTML = ""
     resultsSection.innerHTML = "";

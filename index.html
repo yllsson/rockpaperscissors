@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Rock Paper Scissors!</title>
-        <link rel="stylesheet" href="./css/style.css">
-        <script src="./js/apps.js"></script>
-    </head>
+  <head>
+    <title>Rock Paper Scissors!</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/apps.js"></script>
+  </head>
 
-    <body>
-        <main class="mainContainer">
-            <h1>Time to play Rock Paper Scissors!</h1>
-            <section class="buttonContainer">
-                <div class="button rock" id="rock"></div>
-                <div class="button paper" id="paper"></div>
-                <div class="button scissors" id="scissors"></div>
-            </section>
-            
-            <section class="resultsContainer">
-                <div id="picks"></div>
-                <div id="results"></div>
-            </section>
-        </main>
-    </body>
+  <body>
+    <main class="mainContainer">
+      <h1>Time to play Rock Paper Scissors!</h1>
+      <section class="buttonContainer">
+        <div class="button rock" id="rock"></div>
+        <div class="button paper" id="paper"></div>
+        <div class="button scissors" id="scissors"></div>
+      </section>
+
+      <section class="gameTypeContainer" id="gameTypeContainer">
+        <select class="gameType" id="gameType" name="gameType">
+          <option value="">Select game type</option>
+          <option value="3">First to 3 wins</option>
+          <option value="5">First to 5 wins</option>
+        </select>
+
+        <div id="scoreContainer"></div>
+      </section>
+      
+      <section class="resultsContainer">
+        <div id="picks"></div>
+        <div id="results"></div>
+      </section>
+    </main>
+  </body>
 </html>
