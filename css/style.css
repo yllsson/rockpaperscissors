@@ -72,12 +72,29 @@ h1 {
 
 /* game type and score section */
 
+  .gameTypeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8vh;
+    width: 70vw;
+  }
+
+  .scoreContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 2vh;
+  }
 
 
 /* results section */
 
   .resultsContainer {
-      margin-top: 8vh;
+      margin: 6vh 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
