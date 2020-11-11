@@ -1,29 +1,38 @@
 document.addEventListener('DOMContentLoaded', function() {
-
-// picking a game type
+// declaring all my variables  
   var gameType = document.getElementById('gameType');
-  // var gameTypeContainer = document.getElementById('gameTypeContainer');
   var scoreContainer = document.getElementById('scoreContainer');
-
-  gameType.addEventListener('change', event => {
-    var dropDownValue = event.target.value;
-
-    scoreContainer.innerHTML = ''; 
-
-    scoreContainer.innerHTML += `
-        <h2>Your score 0/${dropDownValue}</h2>
-        <h2>Computer score 0/${dropDownValue}</h2>
-        `; 
-  });
+  var userScore = document.getElementById('userScore');
+  var compScore = document.getElementById('compScore');
+  var userDropDownValue = document.getElementById('userDropDownValue')
+  var compDropDownValue = document.getElementById('compDropDownValue')
 
 
-// the game!
   var rock = document.getElementById('rock');
   var paper = document.getElementById('paper');
   var scissors = document.getElementById('scissors');
 
   var picksSection = document.getElementById("picks");
   var resultsSection = document.getElementById("results");
+
+  var userWinCount = 0;
+  var compWinCount = 0;
+  
+
+// picking a game type
+
+  gameType.addEventListener('change', event => {
+    var ddValue = event.target.value;
+
+    userDropDownValue.innerText = ''; 
+    compDropDownValue.innerText = ''; 
+
+    userDropDownValue.innerText += `${ddValue}`; 
+    compDropDownValue.innerText += `${ddValue}`; 
+  });
+
+// the game!
+
 
   function game(user) {
     picksSection.innerHTML = ""
@@ -69,24 +78,33 @@ document.addEventListener('DOMContentLoaded', function() {
         resultsSection.innerHTML += `
         <h2>You win!</h2>
         `;
+        userWinCount++ 
       } else {
         resultsSection.innerHTML += `
         <h2>You lose!</h2>
         `;
+        compWinCount++
       }
     }
   }
 
   rock.addEventListener("click", function () {
     game(0); 
+    userScore.innerText = `${userWinCount}`;
+    compScore.innerText = `${compWinCount}`;
   });
 
   paper.addEventListener("click", function () {
     game(1); 
+    userScore.innerText = `${userWinCount}`;
+    compScore.innerText = `${compWinCount}`;
   });
 
   scissors.addEventListener("click", function () {
     game(2); 
+    userScore.innerText = `${userWinCount}`;
+    compScore.innerText = `${compWinCount}`;
   });
 
 });
+
