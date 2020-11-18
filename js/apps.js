@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     mainContainer.style.justifyContent = 'center';
     mainContainer.style.alignItems = 'center';
     makeYourChoice.innerHTML = `<h2>Make your choice!</h2>`;
+
   })
 
   function resetGame(){
@@ -44,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     mainContainer.style.justifyContent = '';
     mainContainer.style.alignItems = '';
     gameType.selectedIndex = 0;
+    ddValue = '';
     resetScore();
   }
 
@@ -132,6 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
 
+    // this makes ends the game when there is a winner
     if(ddValue > 1 && userWinCount == ddValue){
       resetGame();
       gameEnd.innerHTML = `<h3>You beat the computer! You're amazing!</h3>`
@@ -159,8 +162,6 @@ document.addEventListener('DOMContentLoaded', function() {
     userScore.innerText = `${userWinCount}`;
     compScore.innerText = `${compWinCount}`;
   });
-
-
 
 });
 
