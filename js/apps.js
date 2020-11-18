@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     compScore.innerText = '0';
     userDropDownValue.innerText = '0'; 
     compDropDownValue.innerText = '0'; 
+    gameType.selectedIndex = 0;
   }
 
 // picking a game type
@@ -112,6 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
         compWinCount++
       }
     }
+
   }
 
   rock.addEventListener("click", function () {

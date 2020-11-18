@@ -48,6 +48,11 @@
 
 /* Game buttons */
 
+  .btn {
+    border: 1px solid black;
+    border-radius: 0%;
+  }
+
   .buttonContainer {
       display: flex;
       flex-direction: row;
@@ -108,7 +113,7 @@
   }
 
   .scoreContainer h2 {
-    font-size: 1.8em;
+    font-size: 1.6em;
   }
 
 /* results section */
