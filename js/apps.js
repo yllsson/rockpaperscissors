@@ -43,8 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
     compScore.innerText = '0';
     userDropDownValue.innerText = '0'; 
     compDropDownValue.innerText = '0'; 
-    
-    console.log('hello')
   }
 
 // picking a game type
