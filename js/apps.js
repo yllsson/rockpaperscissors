@@ -132,10 +132,10 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
 
-    if(userWinCount == ddValue){
+    if(ddValue > 1 && userWinCount == ddValue){
       resetGame();
       gameEnd.innerHTML = `<h3>You beat the computer! You're amazing!</h3>`
-    } else if (compWinCount == ddValue){
+    } else if (ddValue > 1 && compWinCount == ddValue){
       resetGame();
       gameEnd.innerHTML = `<h3>The computer beat you! Aww man...</h3>`
     }

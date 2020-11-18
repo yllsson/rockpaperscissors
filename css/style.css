@@ -9,11 +9,12 @@
 /* general */
 
   body {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     font-family: "Calibri", sans-serif;
     background-color: #FDFFFC;
     color: #011627;
+    width: 70vw;
   }
 
   .mainContainer {
@@ -28,7 +29,6 @@
 /* header */
 
   header {
-    width: 70vw;
     margin: 5vh auto;
     display: flex;
     flex-direction: column;
@@ -41,6 +41,7 @@
     text-align: center;
     font-size: 3em;
     color: #333333;
+    width: 60%;
   }
 
 
@@ -51,16 +52,20 @@
     border-radius: 0%;
   }
 
-  .buttonContainer {
+  .btn-block {
+    width: 60%;
+  }
+
+  .gameButtonContainer {
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
       align-items: center;
-      width: 70vw;
+      width: 100%;
       margin: 0 auto;
   }
 
-  .button {
+  .gameButton {
       border: 1px solid black;
       border-radius: 10%;
       background-size: contain;
@@ -69,10 +74,6 @@
       width: 15vw;
       height: 15vw;
       box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
-  }
-
-  .button:hover {
-      box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   }
 
   .rock {
@@ -98,7 +99,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 5vh;
-    width: 70vw;
+    width: 100%;
   }
 
   .scoreContainer {
@@ -106,7 +107,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 70vw;
+    width: 60%;
     margin-top: 5vh;
   }
 
@@ -119,7 +120,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 58%;
+      width: 60%;
 
       background-color: lightgrey;
       text-align: center;
