@@ -1,23 +1,51 @@
 document.addEventListener('DOMContentLoaded', function() {
 // declaring all my variables  
+  var newGame = document.getElementById('newGame')
   var gameType = document.getElementById('gameType');
-  var scoreContainer = document.getElementById('scoreContainer');
+  var mainContainer = document.getElementById('mainContainer');
   var userScore = document.getElementById('userScore');
   var compScore = document.getElementById('compScore');
   var userDropDownValue = document.getElementById('userDropDownValue')
   var compDropDownValue = document.getElementById('compDropDownValue')
-
-
+  
   var rock = document.getElementById('rock');
   var paper = document.getElementById('paper');
   var scissors = document.getElementById('scissors');
 
   var picksSection = document.getElementById("picks");
   var resultsSection = document.getElementById("results");
+  var scoreContainer = document.getElementById('scoreContainer');
+
 
   var userWinCount = 0;
   var compWinCount = 0;
   
+
+
+// starting a game
+  newGame.addEventListener('click', event => {
+    resetGame();
+    mainContainer.style.display = 'flex';
+    mainContainer.style.flexDirection = 'column';
+    mainContainer.style.justifyContent = 'center';
+    mainContainer.style.alignItems = 'center';
+  })
+
+  function resetGame(){
+    mainContainer.style.display = 'none';
+    mainContainer.style.flexDirection = '';
+    mainContainer.style.justifyContent = '';
+    mainContainer.style.alignItems = '';
+
+    picksSection.innerHTML = ''
+    resultsSection.innerHTML = '';
+    userScore.innerText = '0';
+    compScore.innerText = '0';
+    userDropDownValue.innerText = '0'; 
+    compDropDownValue.innerText = '0'; 
+    
+    console.log('hello')
+  }
 
 // picking a game type
 
