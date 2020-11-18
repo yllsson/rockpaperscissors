@@ -1,25 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
 // declaring all my variables  
-  var newGame = document.getElementById('newGame')
-  var gameType = document.getElementById('gameType');
+  // header and main variables
+  var newGame = document.getElementById('newGame');
   var mainContainer = document.getElementById('mainContainer');
-  var userScore = document.getElementById('userScore');
-  var compScore = document.getElementById('compScore');
-  var userDropDownValue = document.getElementById('userDropDownValue')
-  var compDropDownValue = document.getElementById('compDropDownValue')
+
+  // game type variables
+  var gameType = document.getElementById('gameType');
+  var userDropDownValue = document.getElementById('userDropDownValue');
+  var compDropDownValue = document.getElementById('compDropDownValue');
+  var ddValue;
   
+  // game specific variables
   var rock = document.getElementById('rock');
   var paper = document.getElementById('paper');
   var scissors = document.getElementById('scissors');
-
-  var picksSection = document.getElementById("picks");
-  var resultsSection = document.getElementById("results");
-  var scoreContainer = document.getElementById('scoreContainer');
-
-
+  var userScore = document.getElementById('userScore');
+  var compScore = document.getElementById('compScore');
   var userWinCount = 0;
   var compWinCount = 0;
-  
+
+  // scoreboard variables
+  var makeYourChoice = document.getElementById('makeYourChoice');
+  var picks = document.getElementById("picks");
+  var results = document.getElementById("results");
+
+  // game end variable
+  var gameEnd = document.getElementById('gameEnd');
 
 
 // starting a game
@@ -29,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     mainContainer.style.flexDirection = 'column';
     mainContainer.style.justifyContent = 'center';
     mainContainer.style.alignItems = 'center';
+    makeYourChoice.innerHTML = `<h2>Make your choice!</h2>`;
   })
 
   function resetGame(){
@@ -36,34 +43,45 @@ document.addEventListener('DOMContentLoaded', function() {
     mainContainer.style.flexDirection = '';
     mainContainer.style.justifyContent = '';
     mainContainer.style.alignItems = '';
-
-    picksSection.innerHTML = ''
-    resultsSection.innerHTML = '';
-    userScore.innerText = '0';
-    compScore.innerText = '0';
-    userDropDownValue.innerText = '0'; 
-    compDropDownValue.innerText = '0'; 
     gameType.selectedIndex = 0;
+    resetScore();
+  }
+
+  function resetScore(){
+    picks.innerHTML = ''
+    results.innerHTML = '';
+    gameEnd.innerHTML = ''
+    userScore.innerText = '';
+    compScore.innerText = '';
+    userDropDownValue.innerText = ''; 
+    compDropDownValue.innerText = ''; 
+
+    userWinCount = 0;
+    compWinCount = 0;
   }
 
 // picking a game type
 
   gameType.addEventListener('change', event => {
-    var ddValue = event.target.value;
+    resetScore()
+    ddValue = event.target.value;
 
     userDropDownValue.innerText = ''; 
     compDropDownValue.innerText = ''; 
 
-    userDropDownValue.innerText += `${ddValue}`; 
-    compDropDownValue.innerText += `${ddValue}`; 
+    if(ddValue > 1){
+      userDropDownValue.innerText += `/${ddValue}`; 
+      compDropDownValue.innerText += `/${ddValue}`; 
+    } 
   });
+
 
 // the game!
 
-
   function game(user) {
-    picksSection.innerHTML = ""
-    resultsSection.innerHTML = "";
+    makeYourChoice.innerHTML = '';
+    picks.innerHTML = "";
+    results.innerHTML = "";
 
     let comp = Math.floor(Math.random() * 3);
 
@@ -84,14 +102,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // this gives an initial statement of the user and comp choices
-    picksSection.innerHTML += `
+    picks.innerHTML += `
       <h2>You picked ${userAlt} and the computer picked ${compAlt}.</h2>
     `;    
 
 
     // this calculates and prints the game result!
     if (user === comp) {
-      resultsSection.innerHTML += `
+      results.innerHTML += `
       <h2>It's a tie!</h2>
       `; 
     } else {
@@ -102,19 +120,27 @@ document.addEventListener('DOMContentLoaded', function() {
       }
         
       if (user === winningChoice) {
-        resultsSection.innerHTML += `
+        results.innerHTML += `
         <h2>You win!</h2>
         `;
         userWinCount++ 
       } else {
-        resultsSection.innerHTML += `
+        results.innerHTML += `
         <h2>You lose!</h2>
         `;
         compWinCount++
       }
     }
 
+    if(userWinCount == ddValue){
+      resetGame();
+      gameEnd.innerHTML = `<h3>You beat the computer! You're amazing!</h3>`
+    } else if (compWinCount == ddValue){
+      resetGame();
+      gameEnd.innerHTML = `<h3>The computer beat you! Aww man...</h3>`
+    }
   }
+
 
   rock.addEventListener("click", function () {
     game(0); 
@@ -133,6 +159,8 @@ document.addEventListener('DOMContentLoaded', function() {
     userScore.innerText = `${userWinCount}`;
     compScore.innerText = `${compWinCount}`;
   });
+
+
 
 });
 
